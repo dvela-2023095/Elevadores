@@ -1,0 +1,160 @@
+nov 01, 2026 2:57:47 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 iniciado.
+nov 01, 2026 3:34:23 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 iniciado.
+nov 01, 2026 3:53:01 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 iniciado.
+nov 01, 2026 3:53:12 A.M. elevator.Elevator reset
+INFORMACIÓN: RESET DEL SISTEMA: Elevador regresó al piso 1 y vació su cola de comandos
+nov 01, 2026 3:58:02 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 iniciado.
+nov 01, 2026 3:58:50 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 iniciado.
+nov 01, 2026 3:59:01 A.M. elevator.Elevator reset
+INFORMACIÓN: RESET DEL SISTEMA: Elevador regresó al piso 1 y vació su cola de comandos
+nov 01, 2026 3:59:08 A.M. elevator.Elevator reset
+INFORMACIÓN: RESET DEL SISTEMA: Elevador regresó al piso 1 y vació su cola de comandos
+nov 01, 2026 3:59:20 A.M. elevator.Elevator reset
+INFORMACIÓN: RESET DEL SISTEMA: Elevador regresó al piso 1 y vació su cola de comandos
+nov 01, 2026 4:06:37 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 iniciado.
+nov 01, 2026 4:06:50 A.M. elevator.Elevator reset
+INFORMACIÓN: RESET DEL SISTEMA: Elevador regresó al piso 1 y vació su cola de comandos
+nov 01, 2026 4:07:00 A.M. elevator.Elevator reset
+INFORMACIÓN: RESET DEL SISTEMA: Elevador regresó al piso 1 y vació su cola de comandos
+nov 01, 2026 4:08:06 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 iniciado.
+nov 01, 2026 4:08:17 A.M. elevator.Elevator reset
+INFORMACIÓN: RESET DEL SISTEMA: Elevador regresó al piso 1 y vació su cola de comandos
+nov 01, 2026 4:08:52 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 iniciado.
+nov 01, 2026 4:09:02 A.M. elevator.Elevator reset
+INFORMACIÓN: RESET DEL SISTEMA: Elevador regresó al piso 1 y vació su cola de comandos
+nov 01, 2026 4:09:02 A.M. elevator.Elevator reset
+INFORMACIÓN: RESET DEL SISTEMA: Elevador regresó al piso 1 y vació su cola de comandos
+nov 01, 2026 4:13:50 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 iniciado.
+nov 01, 2026 4:14:00 A.M. elevator.Elevator reset
+INFORMACIÓN: RESET DEL SISTEMA: Elevador regresó al piso 1 y vació su cola de comandos
+nov 01, 2026 4:15:29 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 iniciado.
+nov 01, 2026 4:15:36 A.M. elevator.Elevator reset
+INFORMACIÓN: RESET DEL SISTEMA: Elevador regresó al piso 1 y vació su cola de comandos
+nov 01, 2026 4:25:39 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 iniciado.
+nov 01, 2026 4:27:06 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 iniciado.
+nov 01, 2026 4:27:58 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 iniciado.
+nov 01, 2026 4:28:54 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 iniciado.
+nov 01, 2026 4:28:57 A.M. elevator.Elevator agregarComando
+INFORMACIÓN: Nuevo comando recibido: visitar piso 3
+nov 01, 2026 4:28:57 A.M. elevator.Elevator subir
+INFORMACIÓN: Se mueve del piso 1 hacia el piso 2
+nov 01, 2026 4:28:58 A.M. elevator.Elevator subir
+INFORMACIÓN: Llego al piso 2
+nov 01, 2026 4:28:58 A.M. elevator.Elevator subir
+INFORMACIÓN: Se mueve del piso 2 hacia el piso 3
+nov 01, 2026 4:29:00 A.M. elevator.Elevator subir
+INFORMACIÓN: Llego al piso 3
+nov 01, 2026 4:29:00 A.M. elevator.Elevator run
+INFORMACIÓN: Parada en el piso 3
+nov 01, 2026 4:29:06 A.M. elevator.Elevator agregarComando
+INFORMACIÓN: Nuevo comando recibido: visitar piso 9
+nov 01, 2026 4:29:06 A.M. elevator.Elevator subir
+INFORMACIÓN: Se mueve del piso 3 hacia el piso 4
+nov 01, 2026 4:29:07 A.M. elevator.Elevator subir
+INFORMACIÓN: Llego al piso 4
+nov 01, 2026 4:29:07 A.M. elevator.Elevator subir
+INFORMACIÓN: Se mueve del piso 4 hacia el piso 5
+nov 01, 2026 4:29:09 A.M. elevator.Elevator subir
+INFORMACIÓN: Llego al piso 5
+nov 01, 2026 4:29:09 A.M. elevator.Elevator subir
+INFORMACIÓN: Se mueve del piso 5 hacia el piso 6
+nov 01, 2026 4:29:10 A.M. elevator.Elevator subir
+INFORMACIÓN: Llego al piso 6
+nov 01, 2026 4:29:10 A.M. elevator.Elevator subir
+INFORMACIÓN: Se mueve del piso 6 hacia el piso 7
+nov 01, 2026 4:29:12 A.M. elevator.Elevator subir
+INFORMACIÓN: Llego al piso 7
+nov 01, 2026 4:29:12 A.M. elevator.Elevator subir
+INFORMACIÓN: Se mueve del piso 7 hacia el piso 8
+nov 01, 2026 4:29:13 A.M. elevator.Elevator reset
+INFORMACIÓN: RESET DEL SISTEMA: Elevador regresó al piso 1 y vació su cola de comandos
+nov 01, 2026 4:29:13 A.M. elevator.Elevator subir
+INFORMACIÓN: Llego al piso 8
+nov 01, 2026 4:38:00 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 iniciado.
+nov 01, 2026 4:38:17 A.M. elevator.Elevator agregarComando
+INFORMACIÓN: Nuevo comando recibido: visitar piso 6
+nov 01, 2026 4:38:17 A.M. elevator.Elevator subir
+INFORMACIÓN: Se mueve del piso 1 hacia el piso 2
+nov 01, 2026 4:38:18 A.M. elevator.Elevator subir
+INFORMACIÓN: Llego al piso 2
+nov 01, 2026 4:38:18 A.M. elevator.Elevator subir
+INFORMACIÓN: Se mueve del piso 2 hacia el piso 3
+nov 01, 2026 4:38:20 A.M. elevator.Elevator subir
+INFORMACIÓN: Llego al piso 3
+nov 01, 2026 4:38:20 A.M. elevator.Elevator subir
+INFORMACIÓN: Se mueve del piso 3 hacia el piso 4
+nov 01, 2026 4:38:21 A.M. elevator.Elevator subir
+INFORMACIÓN: Llego al piso 4
+nov 01, 2026 4:38:21 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 detenido.
+nov 01, 2026 4:38:25 A.M. elevator.Elevator reset
+INFORMACIÓN: RESET DEL SISTEMA: Elevador regresó al piso 1 y vació su cola de comandos
+nov 01, 2026 4:38:43 A.M. elevator.Elevator reset
+INFORMACIÓN: RESET DEL SISTEMA: Elevador regresó al piso 1 y vació su cola de comandos
+nov 01, 2026 4:40:40 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 iniciado.
+nov 01, 2026 4:40:53 A.M. elevator.Elevator agregarComando
+INFORMACIÓN: Nuevo comando recibido: visitar piso 5
+nov 01, 2026 4:40:53 A.M. elevator.Elevator subir
+INFORMACIÓN: Se mueve del piso 1 hacia el piso 2
+nov 01, 2026 4:40:55 A.M. elevator.Elevator subir
+INFORMACIÓN: Llego al piso 2
+nov 01, 2026 4:40:55 A.M. elevator.Elevator subir
+INFORMACIÓN: Se mueve del piso 2 hacia el piso 3
+nov 01, 2026 4:40:56 A.M. elevator.Elevator subir
+INFORMACIÓN: Llego al piso 3
+nov 01, 2026 4:40:56 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 detenido.
+nov 01, 2026 4:40:59 A.M. elevator.Elevator reset
+INFORMACIÓN: RESET DEL SISTEMA: Elevador regresó al piso 1 y vació su cola de comandos
+nov 01, 2026 4:57:46 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 iniciado.
+nov 01, 2026 4:58:18 A.M. elevator.Elevator agregarComando
+INFORMACIÓN: Nuevo comando recibido: visitar piso 3
+nov 01, 2026 4:58:18 A.M. elevator.Elevator subir
+INFORMACIÓN: Se mueve del piso 1 hacia el piso 2
+nov 01, 2026 4:58:19 A.M. elevator.Elevator subir
+INFORMACIÓN: Llego al piso 2
+nov 01, 2026 4:58:19 A.M. elevator.Elevator subir
+INFORMACIÓN: Se mueve del piso 2 hacia el piso 3
+nov 01, 2026 4:58:21 A.M. elevator.Elevator subir
+INFORMACIÓN: Llego al piso 3
+nov 01, 2026 4:58:21 A.M. elevator.Elevator run
+INFORMACIÓN: Parada en el piso 3
+nov 01, 2026 4:58:32 A.M. elevator.Elevator reset
+INFORMACIÓN: RESET DEL SISTEMA: Elevador regresó al piso 1 y vació su cola de comandos
+nov 01, 2026 5:11:47 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 iniciado.
+nov 01, 2026 5:11:53 A.M. elevator.Elevator agregarComando
+INFORMACIÓN: Nuevo comando recibido: visitar piso 4
+nov 01, 2026 5:11:53 A.M. elevator.Elevator subir
+INFORMACIÓN: Se mueve del piso 1 hacia el piso 2
+nov 01, 2026 5:11:55 A.M. elevator.Elevator subir
+INFORMACIÓN: Llego al piso 2
+nov 01, 2026 5:11:55 A.M. elevator.Elevator subir
+INFORMACIÓN: Se mueve del piso 2 hacia el piso 3
+nov 01, 2026 5:11:57 A.M. elevator.Elevator subir
+INFORMACIÓN: Llego al piso 3
+nov 01, 2026 5:11:57 A.M. elevator.Elevator subir
+INFORMACIÓN: Se mueve del piso 3 hacia el piso 4
+nov 01, 2026 5:11:58 A.M. elevator.Elevator subir
+INFORMACIÓN: Llego al piso 4
+nov 01, 2026 5:11:58 A.M. elevator.Elevator run
+INFORMACIÓN: Elevador 3 detenido.
+nov 01, 2026 5:11:59 A.M. elevator.Elevator reset
+INFORMACIÓN: RESET DEL SISTEMA: Elevador regresó al piso 1 y vació su cola de comandos

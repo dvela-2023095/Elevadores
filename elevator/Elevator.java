@@ -1,12 +1,15 @@
 package elevator;
 
-import java.util.Queue;
-import java.util.LinkedList;
-import java.util.logging.Logger;
-import java.util.logging.FileHandler;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.SimpleFormatter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
+import simulador.modelos.*;
 
 public class Elevator implements Runnable {
 
@@ -18,10 +21,12 @@ public class Elevator implements Runnable {
     private int tiempoMovimiento;
     private int tiempoEspera;
 
-    private Queue<Integer> comandos;
+    private Queue<Requerimiento> comandos;
     private boolean funcionando;
 
     private Logger logger;
+
+    private boolean resetearon=false;
 
     public Elevator(int ID, int pisoActual, int totalPisos,
                     int tiempoMovimiento, int tiempoEspera) {
@@ -67,16 +72,17 @@ public class Elevator implements Runnable {
     }
 
     // Agrega un piso a la cola de comandos
-    public synchronized void agregarComando(int piso) {
-
+    public synchronized void agregarComando(Requerimiento req) {
+        int piso = req.getDestino();
         if (piso < 1 || piso > totalPisos) {
             System.out.println("El piso solicitado no es valido.");
             return;
         }
 
-        comandos.add(piso);
+        comandos.add(req);
 
         logger.info("Nuevo comando recibido: visitar piso " + piso);
+        notifyAll();
     }
 
     // Sube un piso
@@ -143,7 +149,7 @@ public class Elevator implements Runnable {
                 // Obtiene el siguiente comando
                 synchronized (this) {
 
-                    while (comandos.isEmpty() && funcionando) {
+                    while (comandos.isEmpty() && funcionando &&!resetearon) {
                         wait();
                     }
 
@@ -151,11 +157,22 @@ public class Elevator implements Runnable {
                         break;
                     }
 
-                    destino = comandos.peek();
+                    if(resetearon){
+                        pisoActual=1;
+                        cambiarDireccion("hacia arriba");
+                        resetearon=false;
+                        continue;
+                    }
+
+                    destino = comandos.peek().getDestino();
                 }
 
                 // Se mueve hasta llegar al destino
                 while (pisoActual != destino && funcionando) {
+
+                    if(comandos.isEmpty()){
+                        break;
+                    }
 
                     if (pisoActual < destino) {
                         subir();
@@ -165,7 +182,7 @@ public class Elevator implements Runnable {
                 }
 
                 // Comprueba que llego al destino
-                if (funcionando && pisoActual == destino) {
+                if (funcionando && pisoActual == destino && !comandos.isEmpty()) {
 
                     synchronized (this) {
                         comandos.poll();
@@ -186,6 +203,16 @@ public class Elevator implements Runnable {
         }
 
         logger.info("Elevador " + ID + " detenido.");
+    }
+
+    public synchronized void reset(){
+        comandos.clear();
+        resetearon=true;
+        funcionando=true;
+        pisoActual = 1;
+        cambiarDireccion("hacia arriba");
+        logger.info("RESET DEL SISTEMA: Elevador regresó al piso 1 y vació su cola de comandos");
+        notifyAll();
     }
 
     // Detiene la ejecucion del elevador
@@ -215,5 +242,21 @@ public class Elevator implements Runnable {
         System.out.println(
             "Comandos del elevador " + ID + ": " + comandos
         );
+    }
+
+    public boolean isLibre(){
+        return this.comandos.isEmpty();
+    }
+
+    public int getCantComandos(){
+        return this.comandos.size();
+    }
+
+    public synchronized List<Integer> getColaComandos(){
+        List<Integer> destinos = new ArrayList<>();
+        for(Requerimiento req: comandos){
+            destinos.add(req.getDestino());
+        }
+        return destinos;
     }
 }
