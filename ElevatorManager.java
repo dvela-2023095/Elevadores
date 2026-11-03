@@ -95,6 +95,8 @@ public class ElevatorManager implements Runnable{
 
         for(Elevator elevador: elevadores){
             elevador.reset();
+            PeticionInterna peticion=new PeticionInterna(1);
+            elevador.agregarComando(peticion);
         }
     }
 
