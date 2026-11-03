@@ -1,9 +1,13 @@
 import elevator.*;
 import java.awt.*;
 import java.util.List;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
+
 
 public class SimuladorUI extends JFrame {
 
@@ -167,6 +171,19 @@ public class SimuladorUI extends JFrame {
         });
 
         JButton loadButton=estiloBoton("CARGAR ARCHIVO DE REQUERIMIENTOS",BUTTON_COLOR);
+        loadButton.addActionListener(e->{
+           
+                FileDialog fd = new FileDialog(this, "Seleccione archivo de requerimientos", FileDialog.LOAD);
+                fd.setDirectory(System.getProperty("user.dir"));
+                fd.setFile("*.txt");
+                fd.setVisible(true);
+                String filename = fd.getFile();
+                if (filename == null)
+                  System.out.println("You cancelled the choice");
+                else
+                  loadReqFile(filename);
+            
+        });
 
         buttonsPanel.add(startButton);
         buttonsPanel.add(stopButton);
@@ -176,7 +193,46 @@ public class SimuladorUI extends JFrame {
         return buttonsPanel;
     }
 
+    private void loadReqFile(String file){
+        //File reqFile = new File(file);
+        String[] data, asignarPiso;
+        try (BufferedReader lector = new BufferedReader(new FileReader(file))) {
+        //try(Scanner lector = new Scanner(reqFile)){
+        String line;
+        if ((line = lector.readLine()) != null) {
+        try {
+                int elevadores=Integer.parseInt(line.split("::")[0]);
+                int pisos=Integer.parseInt(line.split("::")[1]);
+                int movi=Integer.parseInt(tiempoMovimientoField.getText());
+                int espe=Integer.parseInt(tiempoEsperaField.getText());
 
+                manager=new ElevatorManager(elevadores,pisos,movi,espe);
+                new Thread(manager).start();
+                
+                panelEdificio.actualizarConfiguracion(manager,pisos,elevadores);
+                timerAnimacion.start();
+                
+                System.out.println("Simulación iniciada con "+elevadores+" elevadores");
+            } catch (Exception ex) {
+                System.out.println(ex);
+            }
+
+        }
+          while ((line = lector.readLine()) != null) {
+          //while (lector.hasNextLine()) {
+            System.out.println(line);
+            data = line.split("::");
+            int idElevador = Integer.parseInt(data[0]);
+            asignarPiso = data[1].split(",");
+            for(int i=0; i<asignarPiso.length; i++){
+                manager.peticionInterna(idElevador,Integer.parseInt(asignarPiso[i]));
+            }
+          }
+        }catch (IOException e) {
+      System.out.println("An error occurred. File not found.");
+      //e.printStackTrace();
+    }
+    }
 
 
     private JPanel panelManager() {
