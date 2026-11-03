@@ -197,15 +197,14 @@ public class Elevator implements Runnable {
         logger.info("Elevador " + ID + " detenido.");
     }
 
-    public synchronized void reset(){
-        comandos.clear();
-        resetearon=true;
-        funcionando=true;
-        pisoActual = 1;
-        cambiarDireccion("hacia arriba");
-        logger.info("RESET DEL SISTEMA: Elevador regresó al piso 1 y vació su cola de comandos");
-        notifyAll();
-    }
+    public synchronized void reset() {
+    comandos.clear();
+    funcionando=true;
+    Requerimiento req = new PeticionInterna(1);
+    agregarComando(req);
+
+    logger.info("Elevador " + ID + " reiniciado. Regresando al piso 1.");
+}
 
     // Detiene la ejecucion del elevador
     public synchronized void detener() {
