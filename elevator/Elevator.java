@@ -52,9 +52,7 @@ public class Elevator implements Runnable {
 
             logger.setUseParentHandlers(false);
 
-            FileHandler archivo = new FileHandler(
-                "elevador" + ID + ".log", true
-            );
+            FileHandler archivo = new FileHandler("elevador" + ID + ".log", true);
 
             archivo.setFormatter(new SimpleFormatter());
 
@@ -64,10 +62,10 @@ public class Elevator implements Runnable {
             logger.addHandler(archivo);
             logger.addHandler(consola);
 
-        } catch (IOException e) {
-            System.out.println(
-                "Error al crear el archivo de registro del elevador " + ID
-            );
+        } 
+        
+        catch (IOException e) {
+            System.out.println("Error al crear el archivo de registro del elevador " + ID);
         }
     }
 
@@ -92,10 +90,7 @@ public class Elevator implements Runnable {
 
         cambiarDireccion("hacia arriba");
 
-        logger.info(
-            "Se mueve del piso " + pisoActual +
-            " hacia el piso " + siguientePiso
-        );
+        logger.info("Se mueve del piso " + pisoActual + " hacia el piso " + siguientePiso);
 
         Thread.sleep(tiempoMovimiento);
 
@@ -111,10 +106,7 @@ public class Elevator implements Runnable {
 
         cambiarDireccion("hacia abajo");
 
-        logger.info(
-            "Se mueve del piso " + pisoActual +
-            " hacia el piso " + siguientePiso
-        );
+        logger.info("Se mueve del piso " + pisoActual + " hacia el piso " + siguientePiso);
 
         Thread.sleep(tiempoMovimiento);
 
@@ -158,9 +150,9 @@ public class Elevator implements Runnable {
                     }
 
                     if(resetearon){
-                        pisoActual=1;
+                        pisoActual = 1;
                         cambiarDireccion("hacia arriba");
-                        resetearon=false;
+                        resetearon = false;
                         continue;
                     }
 
@@ -176,7 +168,9 @@ public class Elevator implements Runnable {
 
                     if (pisoActual < destino) {
                         subir();
-                    } else {
+                    } 
+                    
+                    else {
                         bajar();
                     }
                 }
@@ -188,9 +182,7 @@ public class Elevator implements Runnable {
                         comandos.poll();
                     }
 
-                    logger.info(
-                        "Parada en el piso " + pisoActual
-                    );
+                    logger.info("Parada en el piso " + pisoActual);
 
                     Thread.sleep(tiempoEspera);
                 }
@@ -239,9 +231,7 @@ public class Elevator implements Runnable {
 
     // Muestra los comandos pendientes
     public synchronized void mostrarComandos() {
-        System.out.println(
-            "Comandos del elevador " + ID + ": " + comandos
-        );
+        System.out.println("Comandos del elevador " + ID + ": " + comandos);
     }
 
     public boolean isLibre(){
